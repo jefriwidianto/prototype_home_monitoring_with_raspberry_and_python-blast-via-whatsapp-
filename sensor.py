@@ -33,9 +33,9 @@ def credential():
     return "6285559402907","9UcLkHSmh5y/1x1UF72la5S/BhE="
 
 url = "http://andrigunawangh.000webhostapp.com/includes/webservice_noperson.php"
-r = requests.get(url)
-hh = json.loads(r.text)
-loop = len(hh)
+read = requests.get(url)
+string = json.loads(read.text)
+loop = len(string)
 
 
 while 1:
@@ -74,7 +74,7 @@ while 1:
           website = urllib.request.urlopen(url, encoded_data)
          # print (website.read())
           print ("detect")
-          for x in hh:
+          for x in string:
               try:
                   stack = SendMediaStack(credential(),[(x,"/home/pi/tugasakhir/"+cek)])
                   stack.start()
